@@ -66,6 +66,6 @@ print tmp_list
 #for data in enron_data:
 #	for key, v in enron_data[data].items():
 #		print "key:{}, v: {}".format(key, v)
-print f.featureFormat(enron_data, tmp_list);
-
-
+#f.average_with_nan(enron_data, "total_payments")
+f.average_with_nan_and_poi(enron_data, "total_payments")
+#f.average_with_nan_and_dataset(enron_data, "total_payments")
