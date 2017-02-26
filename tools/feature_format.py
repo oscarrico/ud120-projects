@@ -32,9 +32,43 @@
 
 
 import numpy as np
-def hello():
-    print "hello"
-    
+import math
+
+def average_with_nan(dataset, column):
+    total_count = 0
+    total = 0
+    for data in dataset:
+        if dataset[data][column] == 'NaN':
+            total_count = total_count + 1
+        total = total + 1
+
+    print (total_count * 100)/total
+
+def average_with_nan_and_poi(dataset, column):
+    total_count = 0
+    total = 0
+    poi = 0
+    for data in dataset:
+        if (dataset[data][column] == 'NaN') and dataset[data]['poi']:
+            total_count = total_count + 1
+        total = total + 1
+        if dataset[data]['poi']:
+            poi = poi + 1
+    print "{}  {} {}".format(total_count , total, poi)
+    print (total_count * 100)/total
+
+
+def average_with_nan_and_dataset(dataset, column):
+    total_count = 0
+    total = 0
+    for data in dataset:
+        if (dataset[data]['total_payments'] == 'NaN'):
+            total_count = total_count + 1
+        if data == 'NaN':
+            total_count = total_count + 1
+        total = total + 1
+    print "{}  {}".format(total_count , total)
+
 def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True, remove_any_zeroes=False, sort_keys = False):
     """ convert dictionary to numpy array of features
         remove_NaN = True will convert "NaN" string to 0.0
