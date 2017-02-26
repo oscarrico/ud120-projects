@@ -32,7 +32,9 @@
 
 
 import numpy as np
-
+def hello():
+    print "hello"
+    
 def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True, remove_any_zeroes=False, sort_keys = False):
     """ convert dictionary to numpy array of features
         remove_NaN = True will convert "NaN" string to 0.0
